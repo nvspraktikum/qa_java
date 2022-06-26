@@ -1,10 +1,6 @@
 package com.example;
 
-import org.junit.Assert;
 import org.junit.Test;
-import org.mockito.Mockito;
-
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -15,7 +11,6 @@ public class AnimalTest {
     public void checkGetFoodPredator() throws Exception {
         Animal animal = new Animal();
         List<String> expected = List.of("Животные","Птицы", "Рыба");
-        System.out.println(expected);
         List<String> food = animal.getFood("Хищник");
         assertEquals(expected, food);
     }
@@ -24,7 +19,6 @@ public class AnimalTest {
     public void checkGetFoodHerbivore() throws Exception {
         Animal animal = new Animal();
         List<String> expected = List.of("Трава", "Различные растения");
-        System.out.println(expected);
         List<String> food = animal.getFood("Травоядное");
         assertEquals(expected, food);
     }
