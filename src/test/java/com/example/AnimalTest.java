@@ -14,10 +14,7 @@ public class AnimalTest {
     @Test
     public void checkGetFoodPredator() throws Exception {
         Animal animal = new Animal();
-        ArrayList<String> expected = new ArrayList<String>();
-        expected.add("Животные");
-        expected.add("Птицы");
-        expected.add("Рыба");
+        List<String> expected = List.of("Животные","Птицы", "Рыба");
         System.out.println(expected);
         List<String> food = animal.getFood("Хищник");
         assertEquals(expected, food);
@@ -26,9 +23,7 @@ public class AnimalTest {
     @Test
     public void checkGetFoodHerbivore() throws Exception {
         Animal animal = new Animal();
-        ArrayList<String> expected = new ArrayList<String>();
-        expected.add("Трава");
-        expected.add("Различные растения");
+        List<String> expected = List.of("Трава", "Различные растения");
         System.out.println(expected);
         List<String> food = animal.getFood("Травоядное");
         assertEquals(expected, food);
