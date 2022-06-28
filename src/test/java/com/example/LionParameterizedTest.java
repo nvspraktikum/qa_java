@@ -9,21 +9,19 @@ import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
 public class LionParameterizedTest {
-    private final int index;
     private final String gender;
     private final boolean hasMane;
 
-    public LionParameterizedTest(int index, String gender, boolean hasMane) {
-        this.index = index;
+    public LionParameterizedTest(String gender, boolean hasMane) {
         this.gender = gender;
         this.hasMane = hasMane;
     }
 
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name = "Тестовые данные: {0} {1}")
     public static Object[][] getData() {
         return new Object[][] {
-                {0, "Самец", true},
-                {1, "Самка", false},
+                {"Самец", true},
+                {"Самка", false},
         };
     }
 
